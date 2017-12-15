@@ -37,9 +37,9 @@ describe('store', () => {
       </Provider>
     );
     store.dispatch({
-      type: 'ADD_USER', 
+      type: 'ADD_USER',
       user: {
-        name: 'bob', 
+        name: 'bob',
         hometown: 'philly'
       }
     });
@@ -56,21 +56,22 @@ describe('store', () => {
       </Provider>
     );
     store.dispatch({
-      type: 'ADD_USER', 
+      type: 'ADD_USER',
       user: {
-        userName: 'bob', 
+        userName: 'bob',
         hometown: 'philly'
       }
     });
     store.dispatch({
-      type: 'ADD_USER', 
+      type: 'ADD_USER',
       user: {
-        userName: 'fred', 
+        userName: 'fred',
         hometown: 'pittsburgh'
       }
     });
     let WrapperConnectedUsers = wrapper.find(ConnectedUsers).first();
     let WrapperUsers = wrapper.find(Users).first();
+    console.log('text: ', WrapperUsers.text())
     expect(WrapperUsers.text()).to.include('bob');
     expect(WrapperUsers.text()).to.include('fred');
   });
@@ -83,16 +84,16 @@ describe('store', () => {
       </Provider>
     );
     store.dispatch({
-      type: 'ADD_USER', 
+      type: 'ADD_USER',
       user: {
-        name: 'bob', 
+        name: 'bob',
         hometown: 'philly'
       }
     });
     store.dispatch({
-      type: 'ADD_USER', 
+      type: 'ADD_USER',
       user: {
-        name: 'fred', 
+        name: 'fred',
         hometown: 'pittsburgh'
       }
     });
