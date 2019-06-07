@@ -1,18 +1,25 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class Users extends Component {
 
   render() {
+
+    const { users } = this.props;
+
     return (
       <div>
         <ul>
-          Users!
+          {users.map(u => <li>{u.username}</li>)}
         </ul>
+        {users.length}
       </div>
     )
   }
 }
 
-//add mapStateToProps here
+const mapStateToProps = state => {
+  return {users: state.users}
+}
 
-export default Users
+export default connect(mapStateToProps)(Users)
